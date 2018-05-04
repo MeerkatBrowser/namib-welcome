@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Welcome Screen
+Comment=
+Exec=/usr/bin/namib-welcome
+Icon=/usr/share/icons/namib-welcome.png
+Terminal=False

@@ -1,0 +1,16 @@
+pkgname=namib-welcome
+pkgdesc='Welcome screen for Namib'
+pkgver=1.0.0
+pkgrel=1
+arch=('any')
+url="https://github.com/MeerkatBrowser/namib-welcome"
+license=('GPL')
+makedepends=('git')
+depends=('python3' 'python-pyqt5')
+source=("git+$url.git")
+sha256sums=('SKIP')
+
+package() {
+    cd $pkgname
+    install -dm755 $pkgdir/usr/share/namib-welcome
+}
