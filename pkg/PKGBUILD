@@ -12,10 +12,17 @@ sha256sums=('SKIP')
 
 package() {
     install -d ${pkgdir}/usr/share/namib-welcome
+    install -d ${pkgdir}/usr/share/applications
     install -d ${pkgdir}/usr/bin
+    install -d ${pkgdir}/etc/skel/.config/autostart
 
     cp -r ${srcdir}/namib-welcome/src/img/ "${pkgdir}/usr/share/namib-welcome/img/"
 
-    cp -r ${srcdir}/namib-welcome/src/ui/namib-welcome.py "${pkgdir}/usr/bin/namib-welcome"
+    cp -r ${srcdir}/namib-welcome/src/namib-welcome.py "${pkgdir}/usr/bin/namib-welcome"
     chmod +x "${pkgdir}/usr/bin/namib-welcome"
+
+    cp -r ${srcdir}/namib-welcome/src/namib-welcome.desktop "${pkgdir}/etc/skel/.config/autostart/namib-welcome.desktop"
+    chmod +x "${pkgdir}/etc/skel/.config/autostart/namib-welcome.desktop"
+
+    cp -r ${srcdir}/namib-welcome/src/namib-welcome.desktop "${pkgdir}/usr/share/applications/namib-welcome.desktop"
 }
