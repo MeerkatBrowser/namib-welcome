@@ -11,6 +11,11 @@ source=("git+$url.git")
 sha256sums=('SKIP')
 
 package() {
-    cd $pkgname
-    install -dm755 $pkgdir/usr/share/namib-welcome
+    install -d ${pkgdir}/usr/share/namib-welcome
+    install -d ${pkgdir}/usr/bin
+
+    cp -r ${srcdir}/namib-welcome/src/img/ "${pkgdir}/usr/share/namib-welcome/img/"
+
+    cp -r ${srcdir}/namib-welcome/src/ui/namib-welcome.py "${pkgdir}/usr/bin/namib-welcome"
+    chmod +x "${pkgdir}/usr/bin/namib-welcome"
 }

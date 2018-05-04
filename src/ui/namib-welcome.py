@@ -37,7 +37,7 @@ class Ui_WelcomeScreen(object):
         WelcomeScreen.resize(640, 480)
         WelcomeScreen.setFixedSize(640, 480)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("../img/namib-welcome.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("/usr/share/namib-welcome/img/namib-welcome.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         WelcomeScreen.setWindowIcon(icon)
         self.MainWidget = QtWidgets.QWidget(WelcomeScreen)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
@@ -69,7 +69,7 @@ class Ui_WelcomeScreen(object):
         sizePolicy.setHeightForWidth(self.wikiButton.sizePolicy().hasHeightForWidth())
         self.wikiButton.setSizePolicy(sizePolicy)
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("../img/wiki.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("/usr/share/namib-welcome/img/wiki.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.wikiButton.setIcon(icon1)
         self.wikiButton.setObjectName("wikiButton")
 
@@ -101,7 +101,7 @@ class Ui_WelcomeScreen(object):
         self.Logo.setSizePolicy(sizePolicy)
         self.Logo.setMaximumSize(QtCore.QSize(64, 64))
         self.Logo.setText("")
-        self.Logo.setPixmap(QtGui.QPixmap("../img/logo.png"))
+        self.Logo.setPixmap(QtGui.QPixmap("/usr/share/namib-welcome/img/logo.png"))
         self.Logo.setScaledContents(True)
         self.Logo.setWordWrap(False)
         self.Logo.setObjectName("Logo")
@@ -126,7 +126,7 @@ class Ui_WelcomeScreen(object):
         sizePolicy.setHeightForWidth(self.donateButton.sizePolicy().hasHeightForWidth())
         self.donateButton.setSizePolicy(sizePolicy)
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("../img/donate.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("/usr/share/namib-welcome/img/donate.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.donateButton.setIcon(icon2)
         self.donateButton.setObjectName("donateButton")
 
@@ -142,7 +142,7 @@ class Ui_WelcomeScreen(object):
         sizePolicy.setHeightForWidth(self.chatButton.sizePolicy().hasHeightForWidth())
         self.chatButton.setSizePolicy(sizePolicy)
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("../img/chat.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap("/usr/share/namib-welcome/img/chat.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.chatButton.setIcon(icon3)
         self.chatButton.setObjectName("chatButton")
 
@@ -171,7 +171,7 @@ class Ui_WelcomeScreen(object):
         sizePolicy.setHeightForWidth(self.installButton.sizePolicy().hasHeightForWidth())
         self.installButton.setSizePolicy(sizePolicy)
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("../img/install.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap("/usr/share/namib-welcome/img/install.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.installButton.setIcon(icon4)
         self.installButton.setObjectName("installButton")
 
@@ -206,7 +206,7 @@ class Ui_WelcomeScreen(object):
         sizePolicy.setHeightForWidth(self.forumsButton.sizePolicy().hasHeightForWidth())
         self.forumsButton.setSizePolicy(sizePolicy)
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("../img/forums.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon5.addPixmap(QtGui.QPixmap("/usr/share/namib-welcome/img/forums.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.forumsButton.setIcon(icon5)
         self.forumsButton.setObjectName("forumsButton")
 
@@ -291,7 +291,7 @@ class Ui_WelcomeScreen(object):
         sizePolicy.setHeightForWidth(self.helpButton.sizePolicy().hasHeightForWidth())
         self.helpButton.setSizePolicy(sizePolicy)
         icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("../img/helpus.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon6.addPixmap(QtGui.QPixmap("/usr/share/namib-welcome/img/helpus.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.helpButton.setIcon(icon6)
         self.helpButton.setObjectName("helpButton")
 
@@ -307,7 +307,7 @@ class Ui_WelcomeScreen(object):
         sizePolicy.setHeightForWidth(self.newsButton.sizePolicy().hasHeightForWidth())
         self.newsButton.setSizePolicy(sizePolicy)
         icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap("../img/news.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon7.addPixmap(QtGui.QPixmap("/usr/share/namib-welcome/img/news.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.newsButton.setIcon(icon7)
         self.newsButton.setObjectName("newsButton")
 
