@@ -5,4 +5,6 @@ Name=Welcome Screen
 Comment=
 Exec=/usr/bin/namib-welcome
 Icon=/usr/share/namib-welcome/img/namib-welcome.png
-Terminal=False
+Terminal=false
+StartupNotify=true
+Categories=System;
