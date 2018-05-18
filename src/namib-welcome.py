@@ -8,17 +8,17 @@ import subprocess
 class Ui_WelcomeScreen(object):
     ######################### CUSTOM ACTIONS ##########################
     def forumButtonAction(self):
-        webbrowser.open("https://forum.meerkat.tk/forums/")
+        webbrowser.open("https://forum.namiblinux.org/categories")
     def chatButtonAction(self):
         webbrowser.open("https://namib.meerkat.tk/support/chat/")
     def donateButtonAction(self):
         webbrowser.open("https://namib.meerkat.tk/donate/")
     def wikiButtonAction(self):
-        webbrowser.open("https://wiki.archlinux.org/")
+        webbrowser.open("https://wiki.namiblinux.org/")
     def newsButtonAction(self):
-        webbrowser.open("https://forum.meerkat.tk/")
+        webbrowser.open("https://forum.namiblinux.org/news")
     def helpButtonAction(self):
-        webbrowser.open("https://github.com/meerkatbrowser")
+        webbrowser.open("https://github.com/namiblinux")
     def installButtonAction(self):
         subprocess.Popen(["pkexec", "calamares"])
     def startCheckAction(self):
@@ -35,7 +35,7 @@ class Ui_WelcomeScreen(object):
     def setupUi(self, WelcomeScreen):
         WelcomeScreen.setObjectName("WelcomeScreen")
         WelcomeScreen.resize(640, 480)
-        WelcomeScreen.setFixedSize(640, 480)
+        WelcomeScreen.setMinimumSize(640, 480)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("/usr/share/namib-welcome/img/namib-welcome.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         WelcomeScreen.setWindowIcon(icon)
@@ -47,22 +47,12 @@ class Ui_WelcomeScreen(object):
         self.MainWidget.setSizePolicy(sizePolicy)
         self.MainWidget.setAutoFillBackground(False)
         self.MainWidget.setObjectName("MainWidget")
-        self.SecondWidget = QtWidgets.QWidget(self.MainWidget)
-        self.SecondWidget.setGeometry(QtCore.QRect(0, 0, 640, 480))
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.SecondWidget.sizePolicy().hasHeightForWidth())
-        self.SecondWidget.setSizePolicy(sizePolicy)
-        self.SecondWidget.setObjectName("SecondWidget")
-        self.gridLayout_2 = QtWidgets.QGridLayout(self.SecondWidget)
-        self.gridLayout_2.setSizeConstraint(QtWidgets.QLayout.SetMaximumSize)
-        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.gridLayout_2.setObjectName("gridLayout_2")
+        self.gridLayout = QtWidgets.QGridLayout(self.MainWidget)
+        self.gridLayout.setObjectName("gridLayout")
         self.mainGrid = QtWidgets.QGridLayout()
         self.mainGrid.setSizeConstraint(QtWidgets.QLayout.SetMaximumSize)
         self.mainGrid.setObjectName("mainGrid")
-        self.wikiButton = QtWidgets.QPushButton(self.SecondWidget)
+        self.wikiButton = QtWidgets.QPushButton(self.MainWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -78,7 +68,7 @@ class Ui_WelcomeScreen(object):
         ################################################################
 
         self.mainGrid.addWidget(self.wikiButton, 7, 0, 1, 1)
-        self.lineTop = QtWidgets.QFrame(self.SecondWidget)
+        self.lineTop = QtWidgets.QFrame(self.MainWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -93,7 +83,7 @@ class Ui_WelcomeScreen(object):
         self.logoLayout.setObjectName("logoLayout")
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.logoLayout.addItem(spacerItem)
-        self.Logo = QtWidgets.QLabel(self.SecondWidget)
+        self.Logo = QtWidgets.QLabel(self.MainWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -109,7 +99,7 @@ class Ui_WelcomeScreen(object):
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.logoLayout.addItem(spacerItem1)
         self.mainGrid.addLayout(self.logoLayout, 0, 0, 1, 3)
-        self.linksLabel = QtWidgets.QLabel(self.SecondWidget)
+        self.linksLabel = QtWidgets.QLabel(self.MainWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -119,7 +109,7 @@ class Ui_WelcomeScreen(object):
         self.linksLabel.setWordWrap(True)
         self.linksLabel.setObjectName("linksLabel")
         self.mainGrid.addWidget(self.linksLabel, 5, 0, 1, 3)
-        self.donateButton = QtWidgets.QPushButton(self.SecondWidget)
+        self.donateButton = QtWidgets.QPushButton(self.MainWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -135,7 +125,7 @@ class Ui_WelcomeScreen(object):
         ################################################################
 
         self.mainGrid.addWidget(self.donateButton, 7, 2, 1, 1)
-        self.chatButton = QtWidgets.QPushButton(self.SecondWidget)
+        self.chatButton = QtWidgets.QPushButton(self.MainWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -151,7 +141,7 @@ class Ui_WelcomeScreen(object):
         ###############################################################
 
         self.mainGrid.addWidget(self.chatButton, 7, 1, 1, 1)
-        self.installationLabel = QtWidgets.QLabel(self.SecondWidget)
+        self.installationLabel = QtWidgets.QLabel(self.MainWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -164,7 +154,7 @@ class Ui_WelcomeScreen(object):
         ##################################################################
 
         self.mainGrid.addWidget(self.installationLabel, 8, 1, 1, 1)
-        self.installButton = QtWidgets.QPushButton(self.SecondWidget)
+        self.installButton = QtWidgets.QPushButton(self.MainWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -181,7 +171,7 @@ class Ui_WelcomeScreen(object):
         ###################################################################
 
         self.mainGrid.addWidget(self.installButton, 9, 1, 1, 1)
-        self.welcomeLabel = QtWidgets.QLabel(self.SecondWidget)
+        self.welcomeLabel = QtWidgets.QLabel(self.MainWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -189,7 +179,7 @@ class Ui_WelcomeScreen(object):
         self.welcomeLabel.setSizePolicy(sizePolicy)
         self.welcomeLabel.setObjectName("welcomeLabel")
         self.mainGrid.addWidget(self.welcomeLabel, 1, 0, 1, 3)
-        self.lineBottom = QtWidgets.QFrame(self.SecondWidget)
+        self.lineBottom = QtWidgets.QFrame(self.MainWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -199,7 +189,7 @@ class Ui_WelcomeScreen(object):
         self.lineBottom.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.lineBottom.setObjectName("lineBottom")
         self.mainGrid.addWidget(self.lineBottom, 10, 0, 1, 3)
-        self.forumsButton = QtWidgets.QPushButton(self.SecondWidget)
+        self.forumsButton = QtWidgets.QPushButton(self.MainWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -218,7 +208,7 @@ class Ui_WelcomeScreen(object):
         self.settingsLayout = QtWidgets.QHBoxLayout()
         self.settingsLayout.setSizeConstraint(QtWidgets.QLayout.SetMaximumSize)
         self.settingsLayout.setObjectName("settingsLayout")
-        self.languageSelector = QtWidgets.QComboBox(self.SecondWidget)
+        self.languageSelector = QtWidgets.QComboBox(self.MainWidget)
         self.languageSelector.setObjectName("languageSelector")
         self.languageSelector.addItem("")
         self.languageSelector.addItem("")
@@ -269,7 +259,7 @@ class Ui_WelcomeScreen(object):
         self.settingsLayout.addWidget(self.languageSelector)
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.settingsLayout.addItem(spacerItem2)
-        self.launchAtStartCheck = QtWidgets.QCheckBox(self.SecondWidget)
+        self.launchAtStartCheck = QtWidgets.QCheckBox(self.MainWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -284,7 +274,7 @@ class Ui_WelcomeScreen(object):
 
         self.settingsLayout.addWidget(self.launchAtStartCheck)
         self.mainGrid.addLayout(self.settingsLayout, 11, 0, 1, 3)
-        self.helpButton = QtWidgets.QPushButton(self.SecondWidget)
+        self.helpButton = QtWidgets.QPushButton(self.MainWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -300,7 +290,7 @@ class Ui_WelcomeScreen(object):
         ###############################################################
 
         self.mainGrid.addWidget(self.helpButton, 6, 2, 1, 1)
-        self.newsButton = QtWidgets.QPushButton(self.SecondWidget)
+        self.newsButton = QtWidgets.QPushButton(self.MainWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -316,7 +306,7 @@ class Ui_WelcomeScreen(object):
         ################################################################
 
         self.mainGrid.addWidget(self.newsButton, 6, 0, 1, 1)
-        self.infoLabel = QtWidgets.QLabel(self.SecondWidget)
+        self.infoLabel = QtWidgets.QLabel(self.MainWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -326,7 +316,7 @@ class Ui_WelcomeScreen(object):
         self.infoLabel.setWordWrap(True)
         self.infoLabel.setObjectName("infoLabel")
         self.mainGrid.addWidget(self.infoLabel, 2, 0, 1, 3)
-        self.gridLayout_2.addLayout(self.mainGrid, 0, 0, 1, 1)
+        self.gridLayout.addLayout(self.mainGrid, 0, 0, 1, 1)
         WelcomeScreen.setCentralWidget(self.MainWidget)
 
         self.retranslateUi(WelcomeScreen)
