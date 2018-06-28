@@ -10,13 +10,13 @@ class Ui_WelcomeScreen(object):
     def forumButtonAction(self):
         webbrowser.open("https://forum.namiblinux.org/categories")
     def chatButtonAction(self):
-        webbrowser.open("https://namib.meerkat.tk/support/chat/")
+        webbrowser.open("https://www.namiblinux.org/support/chat/")
     def donateButtonAction(self):
-        webbrowser.open("https://namib.meerkat.tk/donate/")
+        webbrowser.open("https://www.namiblinux.org/donate/")
     def wikiButtonAction(self):
         webbrowser.open("https://wiki.namiblinux.org/")
     def newsButtonAction(self):
-        webbrowser.open("https://forum.namiblinux.org/news")
+        webbrowser.open("https://forum.namiblinux.org/c/announcements")
     def helpButtonAction(self):
         webbrowser.open("https://github.com/namiblinux")
     def installButtonAction(self):
@@ -257,6 +257,7 @@ class Ui_WelcomeScreen(object):
         self.languageSelector.addItem("")
         self.languageSelector.addItem("")
         self.settingsLayout.addWidget(self.languageSelector)
+        self.languageSelector.hide()
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.settingsLayout.addItem(spacerItem2)
         self.launchAtStartCheck = QtWidgets.QCheckBox(self.MainWidget)
