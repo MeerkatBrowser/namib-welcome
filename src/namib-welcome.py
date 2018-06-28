@@ -20,7 +20,7 @@ class Ui_WelcomeScreen(object):
     def helpButtonAction(self):
         webbrowser.open("https://github.com/namiblinux")
     def installButtonAction(self):
-        subprocess.Popen(["pkexec", "calamares"])
+        subprocess.Popen(["calamares_polkit"])
     def startCheckAction(self):
         if self.launchAtStartCheck.isChecked():
             homedir = os.path.expanduser('~')
